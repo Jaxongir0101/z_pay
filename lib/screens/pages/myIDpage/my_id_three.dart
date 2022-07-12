@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:z_pay/screens/pages/LoginStagePage/come_in.dart';
 import 'package:z_pay/screens/pages/myIDpage/my_id_one.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
-class MyIDPage extends StatefulWidget {
-  const MyIDPage({Key? key}) : super(key: key);
+class MyIdThreePage extends StatefulWidget {
+  const MyIdThreePage({super.key});
 
   @override
-  State<MyIDPage> createState() => _MyIDPageState();
+  State<MyIdThreePage> createState() => _MyIdThreePageState();
 }
 
-class _MyIDPageState extends State<MyIDPage> {
+class _MyIdThreePageState extends State<MyIdThreePage> {
   @override
   Widget build(BuildContext context) {
     var maskFormatter = MaskTextInputFormatter(
@@ -74,51 +75,59 @@ class _MyIDPageState extends State<MyIDPage> {
                   SizedBox(
                     height: 41,
                     width: 57,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "RU",
-                        style: TextStyle(
-                            color: Color(0xff33409E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
                   ),
                 ],
               ),
               SizedBox(height: 60),
               Text(
-                "Паспортные данные",
+                "Персональные данные",
                 style: TextStyle(
                   color: Color(0xff3554D1),
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Text(
-                "Создание нового аккунта",
+                "ФИО",
                 style: TextStyle(
-                  color: Color(0xff878B9A),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
+                  color: Color(0xff12154C),
+                  fontWeight: FontWeight.w800,
+                  fontSize: 14,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 12),
+              SizedBox(
+                height: 52,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 18, right: 24),
+                    fillColor: Color(0xffEAEFF3),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0xff3554D1),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(
+                        color: Color(0xffEAEFF3),
+                      ),
+                    ),
+                  ),
+                  onChanged: (value) {},
+                  style: TextStyle(
+                    color: Color(0xff12154C),
+                    fontWeight: FontWeight.w600,
+                  ),
+                  keyboardType: TextInputType.text,
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 "Номер паспорта",
                 style: TextStyle(
@@ -136,7 +145,9 @@ class _MyIDPageState extends State<MyIDPage> {
                     width: 56,
                     child: TextFormField(
                       textAlignVertical: TextAlignVertical.top,
-                      onSaved: (value) {},
+                      onSaved: (value) {
+                        value?.toUpperCase();
+                      },
                       decoration: InputDecoration(
                         fillColor: Color(0xffEAEFF3),
                         border: OutlineInputBorder(
@@ -176,12 +187,7 @@ class _MyIDPageState extends State<MyIDPage> {
                         onSaved: (value) {},
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(left: 18, right: 24),
-                          suffixIcon: context.watch<ViewModel>().isPhoneCheck
-                              ? Icon(
-                                  Icons.check,
-                                  color: Color(0xff27AE60),
-                                )
-                              : null,
+                  
                           fillColor: Color(0xffEAEFF3),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -198,7 +204,7 @@ class _MyIDPageState extends State<MyIDPage> {
                         ),
                         onChanged: (value) {
                           if (value.length == 7) {
-                            context.read<ViewModel>().numberCheck();
+                         
                             FocusScope.of(context).nextFocus();
                           }
                         },
@@ -228,12 +234,7 @@ class _MyIDPageState extends State<MyIDPage> {
                   inputFormatters: [yearFormatter],
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 18, right: 24),
-                    suffixIcon: context.watch<ViewModel>().birth
-                        ? Icon(
-                            Icons.check,
-                            color: Color(0xff27AE60),
-                          )
-                        : null,
+                   
                     fillColor: Color(0xffEAEFF3),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -250,7 +251,7 @@ class _MyIDPageState extends State<MyIDPage> {
                   ),
                   onChanged: (value) {
                     if (value.length == 10) {
-                      context.read<ViewModel>().yearCheck();
+               
                       FocusScope.of(context).nextFocus();
                     }
                   },
@@ -262,7 +263,49 @@ class _MyIDPageState extends State<MyIDPage> {
                   textAlign: TextAlign.left,
                 ),
               ),
-              SizedBox(height: 200),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Адрес проживания",
+                style: TextStyle(
+                  color: Color(0xff12154C),
+                  fontWeight: FontWeight.w800,
+                  fontSize: 14,
+                ),
+              ),
+              SizedBox(height: 12),
+              SizedBox(
+                height: 52,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 18, right: 24),
+                    fillColor: Color(0xffEAEFF3),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Color(0xff3554D1),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(
+                        color: Color(0xffEAEFF3),
+                      ),
+                    ),
+                  ),
+                  onChanged: (value) {},
+                  style: TextStyle(
+                    color: Color(0xff12154C),
+                    fontWeight: FontWeight.w600,
+                  ),
+                  keyboardType: TextInputType.text,
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              SizedBox(
+                height: height * 0.09,
+              ),
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -286,7 +329,7 @@ class _MyIDPageState extends State<MyIDPage> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => MyIDOnePage(),
+                          builder: (context) => ComeInPage(),
                         ),
                       );
                     },
@@ -355,13 +398,6 @@ class _MyIDPageState extends State<MyIDPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
-              Divider(
-                thickness: 5,
-                color: Colors.black,
-                endIndent: 100,
-                indent: 100,
-              )
             ],
           ),
         ),

@@ -7,14 +7,19 @@ import 'package:z_pay/screens/pages/myIDpage/my_id.dart';
 import '../../../viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
 
-class VerificationPage extends StatefulWidget {
-  const VerificationPage({Key? key}) : super(key: key);
+class VerifationNumerPage extends StatefulWidget {
+  const VerifationNumerPage({super.key});
 
   @override
-  State<VerificationPage> createState() => _VerificationPageState();
+  State<VerifationNumerPage> createState() => _VerifationNumerPageState();
 }
 
-class _VerificationPageState extends State<VerificationPage> {
+class _VerifationNumerPageState extends State<VerifationNumerPage> {
+  TextEditingController pin1 = TextEditingController();
+  TextEditingController pin2 = TextEditingController();
+  TextEditingController pin3 = TextEditingController();
+  TextEditingController pin4 = TextEditingController();
+
   static const countdownDuration = Duration(seconds: 0);
   Timer? timer;
   Duration duration = Duration();
@@ -25,6 +30,13 @@ class _VerificationPageState extends State<VerificationPage> {
     super.initState();
     startTimer();
     reset();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    timer?.cancel();
   }
 
   void reset() {
@@ -65,6 +77,8 @@ class _VerificationPageState extends State<VerificationPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              // Container(
+              //     margin: EdgeInsets.only(top: height * 0.5 - 32 / 2 - 412)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -125,35 +139,51 @@ class _VerificationPageState extends State<VerificationPage> {
                 ],
               ),
               SizedBox(height: height * 0.07),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Верификация номера",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xff3554D1),
+              Padding(
+                padding: EdgeInsets.only(left: width * 0.05),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      """Верификация 
+пользователя""",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff3554D1),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "Мы выслали код подверждения",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff878B9A),
+                    SizedBox(height: 10),
+                    Text(
+                      "Мы выслали код подверждения",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff878B9A),
+                      ),
                     ),
-                  ),
-                  Text(
-                    "на номер: +99897 030 01 05",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff878B9A),
-                    ),
-                  )
-                ],
+                    Row(
+                      children: [
+                        Text(
+                          "на номер:",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff878B9A),
+                          ),
+                        ),
+                        Text(
+                          " ${context.watch<ViewModel>().comeInputNumer}",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff1479FF),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
               SizedBox(
                 height: 30,
@@ -179,8 +209,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       height: 48,
                       width: 48,
                       child: TextFormField(
-                        // cursorHeight: 12,
-                        // cursorWidth: 14,
+                        controller: pin1,
                         showCursor: true,
                         textAlignVertical: TextAlignVertical.top,
                         onSaved: (pin1) {},
@@ -193,8 +222,10 @@ class _VerificationPageState extends State<VerificationPage> {
                         onChanged: (value) {
                           if (value.length == 1) {
                             FocusScope.of(context).nextFocus();
+                            context.read<ViewModel>().isPinCodeOne(pin1.text);
                           }
                         },
+                        validator: ((String? value) {}),
                         style: Theme.of(context).textTheme.headline6,
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
@@ -208,6 +239,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       height: 48,
                       width: 48,
                       child: TextFormField(
+                        controller: pin2,
                         textAlignVertical: TextAlignVertical.top,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -218,6 +250,7 @@ class _VerificationPageState extends State<VerificationPage> {
                         onChanged: (value) {
                           if (value.length == 1) {
                             FocusScope.of(context).nextFocus();
+                            context.read<ViewModel>().isPinCodeTwo(pin2.text);
                           }
                         },
                         style: Theme.of(context).textTheme.headline6,
@@ -233,6 +266,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       height: 48,
                       width: 48,
                       child: TextFormField(
+                        controller: pin3,
                         textAlignVertical: TextAlignVertical.top,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -243,6 +277,7 @@ class _VerificationPageState extends State<VerificationPage> {
                         onChanged: (value) {
                           if (value.length == 1) {
                             FocusScope.of(context).nextFocus();
+                            context.read<ViewModel>().isPinCodeThree(pin3.text);
                           }
                         },
                         style: Theme.of(context).textTheme.headline6,
@@ -258,6 +293,7 @@ class _VerificationPageState extends State<VerificationPage> {
                       height: 48,
                       width: 48,
                       child: TextFormField(
+                        controller: pin4,
                         textAlignVertical: TextAlignVertical.top,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -267,6 +303,7 @@ class _VerificationPageState extends State<VerificationPage> {
                         onChanged: (value) {
                           if (value.length == 1) {
                             FocusScope.of(context).nextFocus();
+                            context.read<ViewModel>().isPinCodeFour(pin4.text);
                           }
                         },
                         onSaved: (pin4) {},
@@ -315,75 +352,74 @@ class _VerificationPageState extends State<VerificationPage> {
               SizedBox(
                 height: 50,
               ),
-              SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            Color(0xff427CF8),
-                            Color(0xff1A3FC7),
-                          ],
-                          begin: FractionalOffset.topCenter,
-                          end: FractionalOffset.bottomCenter),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        onSurface: Colors.transparent,
-                        shadowColor: Colors.transparent,
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => MyIDPage(),
+              (context.watch<ViewModel>().pinOne +
+                              context.watch<ViewModel>().pinTwo +
+                              context.watch<ViewModel>().pinThree +
+                              context.watch<ViewModel>().pinFour)
+                          .length ==
+                      4
+                  ? SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [
+                                Color(0xff427CF8),
+                                Color(0xff1A3FC7),
+                              ],
+                              begin: FractionalOffset.topCenter,
+                              end: FractionalOffset.bottomCenter),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.transparent,
+                            onSurface: Colors.transparent,
+                            shadowColor: Colors.transparent,
                           ),
-                        );
-                      },
-                      child: Text(
-                        "Потвердить",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color(0xffFFFFFF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  )),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DotsIndicator(
-                    dotsCount: 3,
-                    position: 1,
-                    decorator: DotsDecorator(
-                      shapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
-                      ],
-                      activeShapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                      ],
-                      size: Size(6.0, 6),
-                      activeSize: Size(9.0, 9.0),
-                    ),
-                  ),
-                ],
-              ),
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => MyIDPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Потвердить",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ))
+                  :  SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Color(0xffE5EBF0),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.transparent,
+                            onSurface: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "Продолжить",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Color(0xff6D7D93),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      )),
             ],
           ),
         ),

@@ -50,8 +50,9 @@ dev_dependencies:
   provider: ^6.0.3
   phonenumbers: ^1.1.0
   mask_text_input_formatter: ^2.3.0
-  local_auth: ^2.1.0
+
   circular_countdown_timer: ^0.2.2
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -71,6 +72,7 @@ flutter:
     - assets/images/instruction/
     - assets/images/login/
     - assets/images/myID/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

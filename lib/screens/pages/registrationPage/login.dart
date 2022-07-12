@@ -36,34 +36,36 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                            left: width * 0.5 - 57 / 2 + 135,
-                            top: height * 0.5 - 46 / 2 - 400),
-                        padding: EdgeInsets.only(
-                            top: 11, right: 17, bottom: 10, left: 17),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            "RU",
-                            style: TextStyle(
-                                color: Color(0xff33409E),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700),
-                          ),
-                             style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(
-                            color: Color(0xffEAEFF3),
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                           ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              "RU",
+                              style: TextStyle(
+                                  color: Color(0xff33409E),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                               style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.white),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            side: BorderSide(
+                              color: Color(0xffEAEFF3),
+                            ),
                           ),
                         ),
+                      ),
+                          ),
+                       
+                        ],
                       ),
                     ),
-                        ),
-                      ),
                       SizedBox(height: height * 0.1),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

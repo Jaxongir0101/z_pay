@@ -52,7 +52,11 @@ class _SplashOneState extends State<SplashOne> {
                 SizedBox(
                   width: 16,
                 ),
-                Image.asset("assets/images/PAY.png"),
+                Image(
+                  image: AssetImage(
+                    "assets/images/PAY.png",
+                  ),
+                ),
               ],
             ),
             SizedBox(

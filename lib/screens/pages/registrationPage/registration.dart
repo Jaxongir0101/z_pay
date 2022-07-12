@@ -35,8 +35,8 @@ class _RegistrationState extends State<Registration> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                  margin: EdgeInsets.only(top: height * 0.5 - 32 / 2 - 412)),
+              // Container(
+              //     margin: EdgeInsets.only(top: height * 0.5 - 32 / 2 - 412)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
