@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:z_pay/screens/pages/HomeScreen/home_screen_page.dart';
-import 'package:z_pay/screens/pages/LoginStagePage/come_in.dart';
-import 'package:z_pay/screens/pages/instructionPage/instruct_one.dart';
-import 'package:z_pay/screens/pages/myIDpage/my_id.dart';
-import 'package:z_pay/screens/pages/myIDpage/my_id_one.dart';
-import 'package:z_pay/screens/pages/myIDpage/my_id_two.dart';
-import 'package:z_pay/screens/pages/registrationPage/login.dart';
-import 'package:z_pay/screens/pages/registrationPage/registration.dart';
+
 import 'package:z_pay/screens/pages/splashPage/splash1.dart';
+import 'package:flutter/services.dart';
+
+// import 'package:z_pay/screens/pages/faqPages/faq_page.dart';
+// import 'package:z_pay/screens/pages/myIDpage/my_id_two.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // transparent status bar
+  ));
   runApp(
     MultiProvider(
       providers: [

@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-import 'package:z_pay/screens/pages/myIDpage/my_id.dart';
+
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
+
 import '../../../viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -381,7 +382,7 @@ class _VerifationNumerPageState extends State<VerifationNumerPage> {
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => MyIDPage(),
+                                builder: (context) => BottomNavigationPage(),
                               ),
                             );
                           },
