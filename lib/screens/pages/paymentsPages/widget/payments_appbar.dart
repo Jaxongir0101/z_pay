@@ -23,7 +23,7 @@ Widget PaymentsAppBar(context, appBarName,backRoute){
         child: InkWell(
           splashColor: Colors.white30,
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext)=> backRoute));
+      Navigator.pop(context);
             //Orqaga qaytish tugmasi
           },
           child: Container(

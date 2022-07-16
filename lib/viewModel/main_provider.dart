@@ -8,11 +8,16 @@ class ViewModel extends ChangeNotifier {
   bool birth = false;
   String comeInputNumer = "";
   bool isPinCode = false;
-
   String pinOne = "";
   String pinTwo = "";
   String pinThree = "";
   String pinFour = "";
+
+  bool isCheckCardOne = false;
+  bool isCheckCardTwo = false;
+  bool isCheckCardThree = false;
+
+  bool isNotification = false;
 
   indicatorIncrement() {
     indicatorNumber++;
@@ -64,13 +69,36 @@ class ViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  pinCodeisCorrect() {
-    String res = pinOne + pinTwo + pinThree + pinFour;
-    print("------------------------$res");
-    if (res.length == 3) {
-      isPinCode = true;
-
-      notifyListeners();
+  checkCard(int number) {
+    switch (number) {
+      case 0:
+        {
+          isCheckCardOne = true;
+          isCheckCardTwo = false;
+          isCheckCardThree = false;
+          notifyListeners();
+        }
+        break;
+      case 1:
+        {
+          isCheckCardTwo = true;
+          isCheckCardOne = false;
+          isCheckCardThree = false;
+          notifyListeners();
+        }
+        break;
+      case 2:
+        {
+          isCheckCardThree = true;
+          isCheckCardTwo = false;
+          isCheckCardOne = false;
+          notifyListeners();
+        }
     }
+  }
+
+  notification(bool number) {
+    isNotification = number;
+    notifyListeners();
   }
 }

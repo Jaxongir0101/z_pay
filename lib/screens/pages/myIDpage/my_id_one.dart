@@ -13,13 +13,13 @@ class _MyIDOnePageState extends State<MyIDOnePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.only(top: 24,left: 24,right: 24),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
-                  Container(margin: EdgeInsets.only(top: 26)),
+                  Container(margin: EdgeInsets.only(top: 2)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -88,7 +88,7 @@ class _MyIDOnePageState extends State<MyIDOnePage> {
                     ],
                   ),
                   SizedBox(
-                    height: 68,
+                    height: 60,
                   ),
                   Container(
                     height: 260,
@@ -185,7 +185,7 @@ class _MyIDOnePageState extends State<MyIDOnePage> {
                           ),
                         )),
                     SizedBox(
-                      height: 48,
+                      height: 44,
                     ),
                     Divider(
                       thickness: 5,

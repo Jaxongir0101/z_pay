@@ -25,7 +25,7 @@ Widget FaqAppBar(context){
           child: InkWell(
             splashColor: Colors.white30,
             onTap: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext)=> ProfilePage()));
+              Navigator.pop(context);
             },
             child: Container(
               height: 35,

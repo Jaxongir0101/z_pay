@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/instructionPage/instruct_one.dart';
+import 'package:z_pay/screens/pages/registrationPage/login.dart';
 
 class SplashThree extends StatefulWidget {
   const SplashThree({Key? key}) : super(key: key);
@@ -11,11 +12,11 @@ class SplashThree extends StatefulWidget {
 class _SplashThreeState extends State<SplashThree> {
   initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 300), () {
+    Future.delayed(Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => InstructionOne(),
+          builder: (context) => LoginPage(),
         ),
       );
     });

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
 import 'package:z_pay/screens/pages/registrationPage/registration.dart';
 
 class LoginPage extends StatelessWidget {
@@ -175,7 +176,9 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         height: 34,
                       ),
-                      Text(
+                     TextButton(onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BottomNavigationPage()));
+                     }, child:  Text(
                         "Пропустить",
                         style: TextStyle(
                           fontSize: 16,
@@ -185,8 +188,9 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 34,
+                      ),
+                     SizedBox(
+                        height: 24,
                       ),
                       Divider(
                         height: 44,

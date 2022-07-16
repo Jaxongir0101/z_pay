@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:z_pay/screens/pages/Cantracts/fines_page.dart';
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
 
 import 'package:z_pay/screens/pages/splashPage/splash1.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +9,8 @@ import 'package:flutter/services.dart';
 // import 'package:z_pay/screens/pages/myIDpage/my_id_two.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
+
+import 'screens/pages/HomeScreen/home_screen_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +35,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        unselectedWidgetColor: Colors.white, // <-- your color
+      ),
       debugShowCheckedModeBanner: false,
       home: SplashOne(),
     );
