@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:z_pay/screens/pages/Cantracts/fines_page.dart';
 import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
-
 import 'package:z_pay/screens/pages/splashPage/splash1.dart';
 import 'package:flutter/services.dart';
-
-// import 'package:z_pay/screens/pages/faqPages/faq_page.dart';
-// import 'package:z_pay/screens/pages/myIDpage/my_id_two.dart';
+import 'package:z_pay/viewModel/card_provider.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/pages/HomeScreen/home_screen_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +17,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (_) => ViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CardProvider(),
         ),
       ],
       child: MyApp(),
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
         unselectedWidgetColor: Colors.white, // <-- your color
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashOne(),
+      home: BottomNavigationPage(),
     );
   }
 }

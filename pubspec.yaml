@@ -31,6 +31,9 @@ dev_dependencies:
   mask_text_input_formatter: ^2.3.0
   circular_countdown_timer: ^0.2.2
   qr_code_scanner: ^1.0.0
+  credit_card_scanner: ^1.0.4
+  sqflite: ^2.0.3
+  path_provider: ^2.0.11
 
 
 flutter:
@@ -52,6 +55,8 @@ flutter:
     - assets/images/SideBar/
     - assets/images/status/
     - assets/images/notification/
+    - assets/images/card/
+    - assets/images/card/cards/
     - assets/images/
 
   fonts:

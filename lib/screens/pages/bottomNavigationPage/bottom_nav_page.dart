@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/Cantracts/dogovor_page.dart';
 import 'package:z_pay/screens/pages/HomeScreen/home_screen_page.dart';
+import 'package:z_pay/screens/pages/my_Card/my_card_one.dart';
 import 'package:z_pay/screens/pages/profilePage/profile_page.dart';
 
 
@@ -20,10 +21,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
    DogovorPage(),
-    Text(
-      'Мои карты',
-      style: optionStyle,
-    ),
+   MyCardOne(),
     ProfilePage(),
   ];
 

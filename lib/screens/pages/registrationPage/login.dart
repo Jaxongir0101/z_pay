@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:z_pay/screens/pages/LoginStagePage/come_in.dart';
 import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
 import 'package:z_pay/screens/pages/registrationPage/registration.dart';
 
@@ -155,12 +156,7 @@ class LoginPage extends StatelessWidget {
                                   shadowColor: Colors.transparent,
                                 ),
                                 onPressed: () {
-                                  // Navigator.pushReplacement(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) => LoginPage(),
-                                  //   ),
-                                  // );
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ComeInPage()));
                                 },
                                 child: Text(
                                   "Войти",

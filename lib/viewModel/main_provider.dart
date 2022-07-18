@@ -19,6 +19,7 @@ class ViewModel extends ChangeNotifier {
 
   bool isNotification = false;
 
+
   indicatorIncrement() {
     indicatorNumber++;
     notifyListeners();
