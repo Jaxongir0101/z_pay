@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:dots_indicator/dots_indicator.dart';
+
 import 'package:z_pay/screens/pages/my_Card/card_added.dart';
-import 'package:z_pay/screens/pages/my_Card/card_scaner.dart';
 import 'package:z_pay/viewModel/card_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import '../../../database_helper.dart';
 import '../../../viewModel/card.dart';
-import '../../../viewModel/main_provider.dart';
+
 import 'dart:async';
 import 'package:credit_card_scanner/credit_card_scanner.dart';
 
@@ -159,7 +158,7 @@ class _CardAddPageState extends State<CardAddPage> {
                       fontWeight: FontWeight.w600),
                 ),
                 Text(
-                  "${context.watch<CardProvider>().cardCode}",
+                  "${_cardNomerController.text}",
                   style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,

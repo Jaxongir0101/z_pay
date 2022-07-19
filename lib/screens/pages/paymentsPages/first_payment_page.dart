@@ -34,7 +34,7 @@ class _PaymentHomePageState extends State<PaymentHomePage> {
         margin: EdgeInsets.only(left: 22, top: 44),
         child: Text(
           "Оплатить",
-          style: TextStyle(fontSize: 28, color: Colors.blue),
+          style: TextStyle(fontSize: 28, color: Color(0xff3554d1)),
         ),
       ),
         Container(

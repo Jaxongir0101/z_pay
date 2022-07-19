@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:z_pay/screens/pages/HomeScreen/qr_scaner.dart';
+import 'package:z_pay/screens/pages/PartnerovStore/partner_store.dart';
 import 'package:z_pay/screens/pages/SideBar/side_bar.dart';
 
 import '../paymentsPages/first_payment_page.dart';
@@ -514,35 +515,40 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           //Magazin
-          Container(
-              padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
-              width: 98.5,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [
-                      Color(0xffEB7350),
-                      Color(0xffD63004),
-                    ],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Магазины партнеров".toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 9,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Mont"),
-                  ),
-                  Image.asset("assets/images/home/bonusList3.png")
-                ],
-              )),
+          InkWell(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PartnerStore(),));
+            },
+            child: Container(
+                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
+                width: 98.5,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [
+                        Color(0xffEB7350),
+                        Color(0xffD63004),
+                      ],
+                      begin: FractionalOffset.topCenter,
+                      end: FractionalOffset.bottomCenter),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Магазины партнеров".toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 9,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Mont"),
+                    ),
+                    Image.asset("assets/images/home/bonusList3.png")
+                  ],
+                )),
+          ),
           SizedBox(
             width: 16,
           ),
