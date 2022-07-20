@@ -12,7 +12,7 @@ class SplashTwo extends StatefulWidget {
 
 class _SplashTwoState extends State<SplashTwo> {
   _initTimer() {
-    Timer(Duration(seconds: 1), () {
+    Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -29,63 +29,69 @@ class _SplashTwoState extends State<SplashTwo> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height; //829
-
-    final width = MediaQuery.of(context).size.width; //393
-    print(height);
-    print(width);
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.only(bottom: 50, top: 150),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: height * 0.2),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(
-                  image: AssetImage(
-                    "assets/images/Vector.png",
-                  ),
-                  height: height * 0.072,
-                  width: width * 0.153,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: AssetImage(
+                        "assets/images/Vector.png",
+                      ),
+                      height: 58,
+                      width: 58,
+                    ),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    Image(
+                      image: AssetImage(
+                        "assets/images/PAY.png",
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
-                  width: 16,
+                  height: 30,
                 ),
-                Image.asset("assets/images/PAY.png"),
+                Column(
+                  children: [
+                    Text(
+                      """technology inspired""".toUpperCase(),
+                      style: TextStyle(
+                          fontFamily: "Mont",
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff1D44CB)),
+                    ),
+                    Text(
+                      "by transparency".toUpperCase(),
+                      style: TextStyle(
+                          fontFamily: "Mont",
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff1D44CB)),
+                    ),
+                  ],
+                ),
               ],
-            ),
-            SizedBox(
-              height: height * 0.037,
-            ),
-            Column(
-              children: [
-                Text(
-                  """technology inspired""".toUpperCase(),
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600, color: Color(0xff1D44CB)),
-                ),
-                Text(
-                  "by transparency".toUpperCase(),
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600, color: Color(0xff1D44CB)),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: height * 0.145,
             ),
             Image.asset(
               "assets/images/splash/splash2.png",
-              height: height * 0.242,
-              width: width * 0.782,
+              height: 200,
+              width: 308,
             ),
-            SizedBox(height: height * 0.11),
             Text(
               "INVEST",
               style: TextStyle(
                   color: Color(0xff1D44CB),
                   fontSize: 24,
+                  fontFamily: "Mont",
                   fontWeight: FontWeight.w600),
             ),
           ],

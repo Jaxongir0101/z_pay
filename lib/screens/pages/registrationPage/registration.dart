@@ -25,78 +25,78 @@ class _RegistrationState extends State<Registration> {
         filter: {"#": RegExp(r'[0-9]')},
         type: MaskAutoCompletionType.lazy);
 
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+ 
 
     return Scaffold(
+    backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Container(
-              //     margin: EdgeInsets.only(top: height * 0.5 - 32 / 2 - 412)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Color(0xff3554D1),
-                        size: 16,
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      height: 40,
+                      width: 40,
+                      child: ElevatedButton(
+                        
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Color(0xff3554D1),
+                          size: 16,
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 41,
-                    width: 57,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "RU",
-                        style: TextStyle(
-                            color: Color(0xff33409E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+                    SizedBox(
+                      height: 41,
+                      width: 57,
+                      child: ElevatedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "RU",
+                                style: TextStyle(
+                                    color: Color(0xff33409E),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                                 style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                            ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              SizedBox(height: height * 0.07),
+              SizedBox(height: 64,),
               Text(
                 "Регистрация",
                 textAlign: TextAlign.start,
@@ -106,7 +106,7 @@ class _RegistrationState extends State<Registration> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: height * 0.035),
+              SizedBox(height: 30),
               Text(
                 "Номер телефона",
                 style: TextStyle(
@@ -149,14 +149,15 @@ class _RegistrationState extends State<Registration> {
                           ? Icon(Icons.check)
                           : null),
                   validator: (String? value) {
-                    if (value?.length == 18) {
+                    print(value?.length);
+                    if (value?.length == 17) {
                       context.read<ViewModel>().numberCheck();
                     }
                     return null;
                   },
                 ),
               ),
-              SizedBox(height: height * 0.13),
+              SizedBox(height: 140,),
               SizedBox(
                   width: double.infinity,
                   height: 50,
@@ -197,35 +198,35 @@ class _RegistrationState extends State<Registration> {
               SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DotsIndicator(
-                    dotsCount: 3,
-                    position: 0,
-                    decorator: DotsDecorator(
-                      shapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
-                      ],
-                      activeShapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                      ],
-                      size: Size(6.0, 6),
-                      activeSize: Size(9.0, 9.0),
-                    ),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     DotsIndicator(
+              //       dotsCount: 3,
+              //       position: 0,
+              //       decorator: DotsDecorator(
+              //         shapes: [
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(9.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(6.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(4.0)),
+              //         ],
+              //         activeShapes: [
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //         ],
+              //         size: Size(6.0, 6),
+              //         activeSize: Size(9.0, 9.0),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

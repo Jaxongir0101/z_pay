@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:z_pay/screens/pages/HomeScreen/qr_scaner.dart';
 import 'package:z_pay/screens/pages/PartnerovStore/partner_store.dart';
+import 'package:z_pay/screens/pages/SideBar/plan_page.dart';
 import 'package:z_pay/screens/pages/SideBar/side_bar.dart';
 
 import '../paymentsPages/first_payment_page.dart';
@@ -552,35 +553,40 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             width: 16,
           ),
-          Container(
-              padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
-              width: 98.5,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [
-                      Color(0xff32B179),
-                      Color(0xff1F4534),
-                    ],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Рассрочка".toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Mont"),
-                  ),
-                  Image.asset("assets/images/home/bonusList4.png")
-                ],
-              )),
+          InkWell(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PlanPage(),));
+            },
+            child: Container(
+                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
+                width: 98.5,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [
+                        Color(0xff32B179),
+                        Color(0xff1F4534),
+                      ],
+                      begin: FractionalOffset.topCenter,
+                      end: FractionalOffset.bottomCenter),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Рассрочка".toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Mont"),
+                    ),
+                    Image.asset("assets/images/home/bonusList4.png")
+                  ],
+                )),
+          ),
           SizedBox(width: 16)
         ],
       ),

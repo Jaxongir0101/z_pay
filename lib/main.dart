@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
+import 'package:z_pay/screens/pages/password/password.dart';
 import 'package:z_pay/screens/pages/splashPage/splash1.dart';
 import 'package:flutter/services.dart';
 import 'package:z_pay/viewModel/card_provider.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         unselectedWidgetColor: Colors.white, // <-- your color
       ),
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationPage(),
+      home: SplashOne(),
     );
   }
 }

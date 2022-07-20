@@ -17,6 +17,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  local_auth: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -33,14 +34,15 @@ dev_dependencies:
   qr_code_scanner: ^1.0.0
   credit_card_scanner: ^1.0.4
   sqflite: ^2.0.3
-  path_provider: ^2.0.11
+  path_provider: ^2.0.11 
+  flutter_screen_lock: ^7.0.3
 
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/splash/
+    - assets/images/splash/ 
     - assets/images/profile/
     - assets/images/faq/
     - assets/images/payments/
@@ -56,6 +58,7 @@ flutter:
     - assets/images/status/
     - assets/images/notification/
     - assets/images/card/
+    - assets/images/partner/
     - assets/images/card/cards/
     - assets/images/
 

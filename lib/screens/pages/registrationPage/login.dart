@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Color(0xffEAE9EE).withOpacity(0.7),
+              color: Color(0xffEAE9EE).withOpacity(0.5),
               image: DecorationImage(
                   image: AssetImage(
                     "assets/images/login/vector.png",
@@ -24,7 +24,6 @@ class LoginPage extends StatelessWidget {
                   fit: BoxFit.fill),
             ),
             child: Container(
-              margin: EdgeInsets.only(bottom: 32),
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
@@ -38,36 +37,41 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                    Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                           ElevatedButton(
-                            onPressed: () {},
-                            child: Text(
-                              "RU",
-                              style: TextStyle(
-                                  color: Color(0xff33409E),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 24,top: 30,bottom: 24,left: 24),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              height: 41,
+                              width: 57,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "RU",
+                                  style: TextStyle(
+                                      color: Color(0xff33409E),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.white),
+                                  shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      side: BorderSide(
+                                        color: Color(0xffEAEFF3),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
-                               style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
-                            ),
-                          ),
+                          ],
                         ),
                       ),
-                          ),
-                       
-                        ],
-                      ),
-                    ),
                       SizedBox(height: height * 0.1),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -156,7 +160,8 @@ class LoginPage extends StatelessWidget {
                                   shadowColor: Colors.transparent,
                                 ),
                                 onPressed: () {
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ComeInPage()));
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => ComeInPage()));
                                 },
                                 child: Text(
                                   "Войти",
@@ -172,32 +177,25 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         height: 34,
                       ),
-                     TextButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BottomNavigationPage()));
-                     }, child:  Text(
-                        "Пропустить",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: Color(
-                            0xff3554D1,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => BottomNavigationPage()));
+                        },
+                        child: Text(
+                          "Пропустить",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color(
+                              0xff3554D1,
+                            ),
                           ),
                         ),
                       ),
-                      ),
-                     SizedBox(
-                        height: 24,
-                      ),
-                      Divider(
-                        height: 44,
-                        color: Colors.black,
-                        endIndent: 120,
-                        thickness: 5,
-                        indent: 120,
-                      ),
                       SizedBox(
-                        height: 8,
-                      )
+                        height: 20,
+                      ),
                     ],
                   )
                 ],
