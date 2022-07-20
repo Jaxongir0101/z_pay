@@ -17,6 +17,8 @@ class _ContractsState extends State<Contracts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Color(0xff3554D1),

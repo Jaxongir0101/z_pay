@@ -4,7 +4,8 @@ import 'package:phonenumbers/phonenumbers.dart';
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:z_pay/screens/pages/LoginStagePage/verification_numer.dart';
-import 'package:z_pay/screens/pages/registrationPage/verification.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -140,11 +141,12 @@ class _ComeInPageState extends State<ComeInPage> {
                     isDense: true,
                     prefixIcon: Padding(
                         padding: EdgeInsets.fromLTRB(15, 15, 10, 15),
-                        child: Image(
-                          image: AssetImage(
-                            "assets/images/login/flag.png",
-                          ),
-                        )),
+                        child: SvgPicture.asset(
+              'assets/images/login/flag.svg',
+          
+            ),
+    
+                        ),
                     prefixIconConstraints:
                         BoxConstraints(minWidth: 0, minHeight: 0),
                     suffixIcon: context.watch<ViewModel>().comeInCheck

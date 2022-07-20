@@ -65,66 +65,69 @@ class _VerificationPageState extends State<VerificationPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Color(0xff3554D1),
-                        size: 16,
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      height: 40,
+                      width: 40,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Color(0xff3554D1),
+                          size: 16,
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 41,
-                    width: 57,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "RU",
-                        style: TextStyle(
-                            color: Color(0xff33409E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+                    SizedBox(
+                      height: 41,
+                      width: 57,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "RU",
+                          style: TextStyle(
+                              color: Color(0xff33409E),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              SizedBox(height: height * 0.07),
+              SizedBox(height:62),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -156,7 +159,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               Text(
                 "0:${59 + duration.inSeconds}",
@@ -359,7 +362,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   DotsIndicator(
-                    dotsCount: 3,
+                    dotsCount: 2,
                     position: 1,
                     decorator: DotsDecorator(
                       shapes: [
@@ -367,17 +370,16 @@ class _VerificationPageState extends State<VerificationPage> {
                             borderRadius: BorderRadius.circular(9.0)),
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
+               
                       ],
                       activeShapes: [
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16.0)),
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
+                     
                       ],
+                         activeColor: Color(0xff3554D1),
                       size: Size(6.0, 6),
                       activeSize: Size(9.0, 9.0),
                     ),

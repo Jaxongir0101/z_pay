@@ -3,8 +3,7 @@ import 'package:z_pay/screens/pages/Cantracts/dogovor_page.dart';
 import 'package:z_pay/screens/pages/HomeScreen/home_screen_page.dart';
 import 'package:z_pay/screens/pages/my_Card/my_card_one.dart';
 import 'package:z_pay/screens/pages/profilePage/profile_page.dart';
-
-
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({super.key});
@@ -16,12 +15,10 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black);
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-   DogovorPage(),
-   MyCardOne(),
+    DogovorPage(),
+    MyCardOne(),
     ProfilePage(),
   ];
 
@@ -38,80 +35,59 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            activeIcon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Home2.png",
-              ),
-              fit: BoxFit.cover,
+            activeIcon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Home.svg',
+              color: Color(0xff3554D1),
             ),
-            icon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Home.png",
-              ),
-              // height: 26,
-              // width: 25,
-              fit: BoxFit.cover,
+            icon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Home.svg',
+              color: Color(0xff717394),
             ),
             label: 'Главная',
           ),
           BottomNavigationBarItem(
-            activeIcon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Briefcase2.png",
-              ),
-              fit: BoxFit.cover,
+            activeIcon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Briefcase.svg',
+              color: Color(0xff3554D1),
             ),
-            icon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Briefcase.png",
-              ),
-              // height: 26,
-              // width: 25,
-              fit: BoxFit.cover,
-            ),
+            icon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Briefcase.svg',
+              color: Color(0xff717394),),
             label: 'Договора',
           ),
           BottomNavigationBarItem(
-            activeIcon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Cardholder.png",
-              ),
-              fit: BoxFit.cover,
+            
+         activeIcon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Cardholder.svg',
+              color: Color(0xff3554D1),
+              
             ),
-            icon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Cardholder2.png",
-              ),
-              // height: 26,
-              // width: 25,
-              fit: BoxFit.cover,
-            ),
+            
+            icon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Cardholder.svg',
+              color: Color(0xff717394),),
             label: 'Мои карты',
           ),
           BottomNavigationBarItem(
-            activeIcon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Profile1.png",
-              ),
-              fit: BoxFit.cover,
+           activeIcon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Profile.svg',
+              color: Color(0xff3554D1),
             ),
-            icon: Image(
-              image: AssetImage(
-                "assets/images/bottomNavigationBar/Profile.png",
-              ),
-              // height: 26,
-              // width: 25,
-              fit: BoxFit.cover,
-            ),
+            icon: SvgPicture.asset(
+              'assets/images/bottomNavigationBar/Profile.svg',
+              color: Color(0xff717394),),
             label: 'Профиль',
           ),
         ],
         currentIndex: _selectedIndex,
+      
         selectedItemColor: Color(0xff3554D1),
-        type: BottomNavigationBarType.fixed,
+      unselectedItemColor: Color(0xff717394),
+
+       type: BottomNavigationBarType.fixed,
+      showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
     );

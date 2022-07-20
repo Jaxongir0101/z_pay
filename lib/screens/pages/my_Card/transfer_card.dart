@@ -20,6 +20,8 @@ class _TransferCardState extends State<TransferCard> {
         filter: {"#": RegExp(r'[0-9]')},
         type: MaskAutoCompletionType.lazy);
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Color(0xff3554D1),

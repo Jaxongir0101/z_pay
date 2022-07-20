@@ -15,7 +15,7 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffCACACA),
+      backgroundColor: Color(0xfff2f4f7),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Color(0xff3554D1),
@@ -392,142 +392,217 @@ class _NotificationPageState extends State<NotificationPage> {
          color: Color(0xff12154C),
        ),
      SizedBox(height: 8),
-        ListTile(
-          leading: Image.asset("assets/images/notification/marketRed.png"),
-          title:      Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
+
+     Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+         children: [
+           Image.asset("assets/images/notification/marketRed.png",height: 50,width: 50,),
+           SizedBox(width: 10,),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(
               "Texnomart",
               style: TextStyle(
                   color: Color(0xff12154C),
+                  fontFamily: "Mont",
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w700),
             ),
-          ),
-          subtitle:      Text(
+            
+            Text(
             "14:45",
             style: TextStyle(
-                // color: Color(0xffCBCACF),
+                color: Color(0xffCBCACF),
                 fontSize: 12,
                 fontWeight: FontWeight.w500),
           ),
-            trailing:  Text(
+            ],
+           )
+         ],
+        ),
+         Text(
               "-3 560 230 UZS",
               style: TextStyle(
                   color: Color(0xff12154C),
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontFamily: "Mont",
+                  fontWeight: FontWeight.w700),
             ),
-        ),
-        ListTile(
-          leading: Image.asset("assets/images/notification/marketBlue.png"),
-          title:      Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              "Texnomart",
+      ],
+     ),
+     SizedBox(height: 20),
+Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+         children: [
+           Image.asset("assets/images/notification/marketBlue.png",height: 50,width: 50,),
+           SizedBox(width: 10,),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(
+              "MediaPark",
               style: TextStyle(
                   color: Color(0xff12154C),
+                  fontFamily: "Mont",
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.w700),
             ),
-          ),
-          subtitle:      Text(
-            "14:45",
+            
+            Text(
+            "10:45",
             style: TextStyle(
-              // color: Color(0xffCBCACF),
+                color: Color(0xffCBCACF),
                 fontSize: 12,
                 fontWeight: FontWeight.w500),
           ),
-          trailing:  Text(
-            "-3 560 230 UZS",
-            style: TextStyle(
-                color: Color(0xff12154C),
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
-          ),
+            ],
+           )
+         ],
         ),
-        ListTile(
-          leading: Image.asset("assets/images/notification/marketBlue.png"),
-          title:      Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              "Texnomart",
+         Text(
+              "-3 560 230 UZS",
               style: TextStyle(
                   color: Color(0xff12154C),
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontFamily: "Mont",
+                  fontWeight: FontWeight.w700),
             ),
-          ),
-          subtitle:      Text(
-            "14:45",
+      ],
+     ),
+          SizedBox(height: 20),
+Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+         children: [
+           Image.asset("assets/images/notification/marketBlue.png",height: 50,width: 50,),
+           SizedBox(width: 10,),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(
+              "MediaPark",
+              style: TextStyle(
+                  color: Color(0xff12154C),
+                  fontFamily: "Mont",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
+            ),
+            
+            Text(
+            "10:45",
             style: TextStyle(
-              // color: Color(0xffCBCACF),
+                color: Color(0xffCBCACF),
                 fontSize: 12,
                 fontWeight: FontWeight.w500),
           ),
-          trailing:  Text(
-            "-3 560 230 UZS",
-            style: TextStyle(
-                color: Color(0xff12154C),
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
-          ),
+            ],
+           )
+         ],
         ),
-        ListTile(
-          leading: Image.asset("assets/images/notification/marketBlue.png"),
-          title:      Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              "Texnomart",
+         Text(
+              "-3 560 230 UZS",
               style: TextStyle(
                   color: Color(0xff12154C),
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontFamily: "Mont",
+                  fontWeight: FontWeight.w700),
             ),
-          ),
-          subtitle:      Text(
-            "14:45",
+      ],
+     ),
+          SizedBox(height: 20),
+Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+         children: [
+           Image.asset("assets/images/notification/marketBlue.png",height: 50,width: 50,),
+           SizedBox(width: 10,),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(
+              "MediaPark",
+              style: TextStyle(
+                  color: Color(0xff12154C),
+                  fontFamily: "Mont",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
+            ),
+            
+            Text(
+            "10:45",
             style: TextStyle(
-              // color: Color(0xffCBCACF),
+                color: Color(0xffCBCACF),
                 fontSize: 12,
                 fontWeight: FontWeight.w500),
           ),
-          trailing:  Text(
-            "-3 560 230 UZS",
-            style: TextStyle(
-                color: Color(0xff12154C),
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
-          ),
+            ],
+           )
+         ],
         ),
-        ListTile(
-          leading: Image.asset("assets/images/notification/marketBlue.png"),
-          title:      Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              "Texnomart",
+         Text(
+              "-3 560 230 UZS",
               style: TextStyle(
                   color: Color(0xff12154C),
                   fontSize: 16,
-                  fontWeight: FontWeight.w600),
+                  fontFamily: "Mont",
+                  fontWeight: FontWeight.w700),
             ),
-          ),
-          subtitle:      Text(
-            "14:45",
+      ],
+     ),
+          SizedBox(height: 20),
+Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+         children: [
+           Image.asset("assets/images/notification/marketBlue.png",height: 50,width: 50,),
+           SizedBox(width: 10,),
+           Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               Text(
+              "MediaPark",
+              style: TextStyle(
+                  color: Color(0xff12154C),
+                  fontFamily: "Mont",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700),
+            ),
+            
+            Text(
+            "10:45",
             style: TextStyle(
-              // color: Color(0xffCBCACF),
+                color: Color(0xffCBCACF),
                 fontSize: 12,
                 fontWeight: FontWeight.w500),
           ),
-          trailing:  Text(
-            "-3 560 230 UZS",
-            style: TextStyle(
-                color: Color(0xff12154C),
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
-          ),
+            ],
+           )
+         ],
         ),
-
+         Text(
+              "-3 560 230 UZS",
+              style: TextStyle(
+                  color: Color(0xff12154C),
+                  fontSize: 16,
+                  fontFamily: "Mont",
+                  fontWeight: FontWeight.w700),
+            ),
+      ],
+     ),
+     
 
       ],
     );

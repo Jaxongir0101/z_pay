@@ -26,79 +26,82 @@ class _MyIDPageState extends State<MyIDPage> {
         type: MaskAutoCompletionType.lazy);
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(margin: EdgeInsets.only(top: 26)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 40,
-                    width: 40,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Color(0xff3554D1),
-                        size: 16,
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+            
+              Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      height: 40,
+                      width: 40,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Color(0xff3554D1),
+                          size: 16,
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Text(
-                    "Идентификация",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Color(0xff3554D1),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 18),
-                  ),
-                  SizedBox(
-                    height: 41,
-                    width: 57,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "RU",
-                        style: TextStyle(
-                            color: Color(0xff33409E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                              color: Color(0xffEAEFF3),
+                    Text(
+                      "Идентификация",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Color(0xff3554D1),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18),
+                    ),
+                    SizedBox(
+                      height: 41,
+                      width: 57,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "RU",
+                          style: TextStyle(
+                              color: Color(0xff33409E),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(
+                                color: Color(0xffEAEFF3),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(height: 60),
               Text(
@@ -176,7 +179,7 @@ class _MyIDPageState extends State<MyIDPage> {
                         onSaved: (value) {},
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(left: 18, right: 24),
-                          suffixIcon: context.watch<ViewModel>().isPhoneCheck
+                          suffixIcon: context.watch<ViewModel>().isPassportNum
                               ? Icon(
                                   Icons.check,
                                   color: Color(0xff27AE60),
@@ -198,7 +201,7 @@ class _MyIDPageState extends State<MyIDPage> {
                         ),
                         onChanged: (value) {
                           if (value.length == 7) {
-                            context.read<ViewModel>().numberCheck();
+                            context.read<ViewModel>().isPassportNumCheck();
                             FocusScope.of(context).nextFocus();
                           }
                         },
@@ -355,13 +358,7 @@ class _MyIDPageState extends State<MyIDPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
-              Divider(
-                thickness: 5,
-                color: Colors.black,
-                endIndent: 100,
-                indent: 100,
-              )
+             
             ],
           ),
         ),

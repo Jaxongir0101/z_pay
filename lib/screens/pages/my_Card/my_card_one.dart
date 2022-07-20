@@ -14,6 +14,8 @@ class _MyCardOneState extends State<MyCardOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

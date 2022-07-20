@@ -4,6 +4,7 @@ import 'package:z_pay/screens/pages/HomeScreen/qr_scaner.dart';
 import 'package:z_pay/screens/pages/PartnerovStore/partner_store.dart';
 import 'package:z_pay/screens/pages/SideBar/plan_page.dart';
 import 'package:z_pay/screens/pages/SideBar/side_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../paymentsPages/first_payment_page.dart';
 
@@ -203,6 +204,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Image(
+                                height: 122,
+                                width: 167,
                                 image: AssetImage(
                                     "assets/images/home/casual1.png"))
                           ],
@@ -265,6 +268,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Image(
+                                height: 122,
+                                width: 167,
                                 image: AssetImage(
                                     "assets/images/home/casual1.png"))
                           ],
@@ -327,6 +332,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Image(
+                                height: 122,
+                                width: 167,
                                 image: AssetImage(
                                     "assets/images/home/casual1.png"))
                           ],
@@ -352,16 +359,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "все",
-                        style: TextStyle(
-                          color: Color(0xffC2C2C2),
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
+                    onPressed: () {},
+                    child: Text(
+                      "все",
+                      style: TextStyle(
+                        color: Color(0xffC2C2C2),
+                        fontSize: 21,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
+                  ),
                 ],
               ),
             ),
@@ -436,10 +443,9 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           SizedBox(width: 24),
           InkWell(
-            onTap: (){
-               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>QrCodeScaner()));
-         
-            
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => QrCodeScaner()));
             },
             child: Container(
                 padding: EdgeInsets.symmetric(vertical: 13, horizontal: 20),
@@ -517,8 +523,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
           //Magazin
           InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PartnerStore(),));
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => PartnerStore(),
+              ));
             },
             child: Container(
                 padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
@@ -554,8 +562,10 @@ class _HomeScreenState extends State<HomeScreen> {
             width: 16,
           ),
           InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PlanPage(),));
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => PlanPage(),
+              ));
             },
             child: Container(
                 padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
@@ -601,9 +611,16 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SizedBox(width: 24),
           Container(
-            color: Colors.white,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(4)),
             width: 100,
-            child: Image.asset("assets/images/home/hamkor1.png"),
+            child: Image.asset(
+              "assets/images/home/hamkor1.png",
+              height: 58,
+              width: 66,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(
             width: 10,
@@ -623,9 +640,16 @@ class _HomeScreenState extends State<HomeScreen> {
             width: 10,
           ),
           Container(
-            color: Colors.white,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(4)),
             width: 100,
-            child: Image.asset("assets/images/home/hamkor1.png"),
+            child: Image.asset(
+              "assets/images/home/hamkor1.png",
+              height: 58,
+              width: 66,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(
             width: 10,

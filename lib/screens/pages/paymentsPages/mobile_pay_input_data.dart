@@ -18,7 +18,7 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
   @override
   void initState() {
     super.initState();
-    titleController =  TextEditingController();
+    titleController = TextEditingController();
   }
 
   bool number = false;
@@ -33,6 +33,7 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
     var backRoute = MobilePaymentPage(context);
     String appBarName = "Мобильная связь";
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
       resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
@@ -45,16 +46,13 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: SizedBox(),
-            ),
+          children: [     
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 40),
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(15)),
                   padding: const EdgeInsets.all(2.0),
@@ -76,8 +74,8 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
               child: Stack(
                 children: [
                   SizedBox(
-                    height: 200,
-                  ),
+                      // height: 100,
+                      ),
                   Column(
                     key: _formKey,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +89,7 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                         child: Text(
                           "Номер  телефона",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16),
+                              fontWeight: FontWeight.w600, fontSize: 14),
                         ),
                       ),
                       Padding(
@@ -121,13 +119,13 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                               decoration: InputDecoration(
                                 fillColor: Colors.grey,
                                 focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
+                                  borderRadius: BorderRadius.circular(10.0),
                                   borderSide: BorderSide(
-                                    color: Colors.blue,
+                                    color: Color(0xff3554D1),
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(10.0),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 2.0,
@@ -173,7 +171,7 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15.0),
                                   borderSide: BorderSide(
-                                    color: Colors.blue,
+                                    color: Color(0xff3554D1),
                                   ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
@@ -202,12 +200,11 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
             InkWell(
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
-
               onTap: () {
                 setState(() {
-                  if(number == true && money == true){
+                  if (number == true && money == true) {
                     // Page route
-                    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext)=> "Buyerga ko'rsating"));
+                    //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext)=> "Buyerga ko'rsating"));
                   }
                 });
 
@@ -221,21 +218,36 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                 height: 55,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: number == true && money == true
-                          ? Colors.grey
-                          : Colors.transparent,
-                      blurRadius: 15,
-                      offset: Offset(2, 8), // Shadow position
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(25),
-                  color: number == true && money == true
-                      ? Colors.indigoAccent
-                      : Colors.grey,
-                ),
-                child: Center(child: Text("Оплатить")),
+                    boxShadow: [
+                      BoxShadow(
+                        color: number == true && money == true
+                            ? Colors.grey
+                            : Colors.transparent,
+                        blurRadius: 15,
+                        offset: Offset(2, 8), // Shadow position
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(25),
+                    gradient: number == true && money == true
+                        ? LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0xff427CF8), Color(0xff1A3FC7)])
+                        : null,
+                    color: !(number == true && money == true)
+                        ? Color(0xffE5EBF0)
+                        : null),
+                child: Center(
+                    child: Text(
+                  "Оплатить",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "Mont",
+                      color: (number == true && money == true)
+                          ? Colors.white
+                          : Color(0xff6D7D93)),
+                )),
               ),
             ),
             Expanded(

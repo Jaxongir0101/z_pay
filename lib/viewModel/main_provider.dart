@@ -12,7 +12,7 @@ class ViewModel extends ChangeNotifier {
   String pinTwo = "";
   String pinThree = "";
   String pinFour = "";
-
+bool isPassportNum = false;
   bool isCheckCardOne = false;
   bool isCheckCardTwo = false;
   bool isCheckCardThree = false;
@@ -38,6 +38,11 @@ class ViewModel extends ChangeNotifier {
   numberCheck() {
     isPhoneCheck = true;
     notifyListeners();
+  }
+
+  isPassportNumCheck(){
+   isPassportNum = true;
+       notifyListeners();
   }
 
   yearCheck() {

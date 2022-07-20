@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/faqPages/faq_page.dart';
 
+
 Widget profileScrollPage(context) {
   String name = "Marina Volkova";
-  String icon_profile = "assets/images/profile/profile_icons/ic_person_box_in.png";
+  String icon_profile =
+      "assets/images/profile/profile_icons/ic_person_box_in.png";
   String icon_prize = "assets/images/profile/profile_icons/ic_gift.png";
   String icon_faq = "assets/images/profile/profile_icons/ic_faq.png";
   String icon_info = "assets/images/profile/profile_icons/ic_about.png";
-  String icon_logout =  "assets/images/profile/profile_icons/ic_exit.png";
+  String icon_logout = "assets/images/profile/profile_icons/ic_exit.png";
 
   return SingleChildScrollView(
     child: Stack(
@@ -35,9 +37,9 @@ Widget profileScrollPage(context) {
                         name,
                         style: TextStyle(
                             fontFamily: "Montserrat",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.black45),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 24,
+                            color: Color(0xff878B9A)),
                       ),
                       const SizedBox(
                         width: 12,
@@ -59,7 +61,7 @@ Widget profileScrollPage(context) {
                     children: const [
                       Text(
                         "ID: 233256",
-                        style: TextStyle(fontSize: 16, color: Colors.green),
+                        style: TextStyle(fontSize: 16, color: Color(0xff32B179)),
                       ),
                     ],
                   ),
@@ -71,95 +73,127 @@ Widget profileScrollPage(context) {
                         fontSize: 50,
                         fontWeight: FontWeight.w800,
                         fontFamily: "Montserrat",
+                        color: Color(0xff12154C)
                       ),
                     ),
                   ),
                   const Text(
                     "Лицевой счет",
                     style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Montserrat",
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "Mont",
+                        color: Color(0xff12154C)
+
                     ),
                   ),
-                  ListTile(
-                    title: const Text(
-                      "Личная информация",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Image.asset(
-                        icon_profile),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      size: 28,
-                    ),
-                  ),
-                  const Divider(
-                    indent: 18,
-                    endIndent: 18,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      "Потратить бонусы",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Image.asset(
-                        icon_prize),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      size: 28,
-                    ),
-                  ),
-                  const Divider(
-                    indent: 18,
-                    endIndent: 18,
-                  ),
-                  ListTile(
-                    onTap:
-                    (){
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext)=> FaqPage()));
-                    },
-                    title: const Text(
-                      "Частно задаваемые вопросы",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Image.asset(
-                        icon_faq),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      size: 28,
-                    ),
-                  ),
-                  const Divider(
-                    indent: 18,
-                    endIndent: 18,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      "О приложении",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Image.asset(
-                        icon_info),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      size: 28,
-                    ),
-                  ),
-                  const Divider(
-                    indent: 18,
-                    endIndent: 18,
-                  ),
-                  ListTile(
-                    title: const Text(
-                      "Личная информация",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    leading: Image.asset(
-                       icon_logout),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      size: 28,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          title: const Text(
+                            "Личная информация",
+                            style: TextStyle(fontWeight: FontWeight.w500,color: Color(0xff121F3E)),
+                          ),
+                          leading: Image.asset(
+                            'assets/images/profile/person.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                          trailing: const Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff33409E),
+                            size: 28,
+                          ),
+                        ),
+                        const Divider(
+                          indent: 18,
+                          endIndent: 18,
+                        ),
+                        ListTile(
+                          title: const Text(
+                            "Потратить бонусы",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                           leading: Image.asset(
+                            'assets/images/profile/bonus.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                          trailing: const Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff33409E),
+                            size: 28,
+                          ),
+                        ),
+                        const Divider(
+                          indent: 18,
+                          endIndent: 18,
+                        ),
+                        ListTile(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext) => FaqPage()));
+                          },
+                          title: const Text(
+                            "Частно задаваемые вопросы",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                            leading: Image.asset(
+                            'assets/images/profile/faq.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                          trailing: const Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff33409E),
+                            size: 28,
+                          ),
+                        ),
+                        const Divider(
+                          indent: 18,
+                          endIndent: 18,
+                        ),
+                        ListTile(
+                          title: const Text(
+                            "О приложении",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                           leading: Image.asset(
+                            'assets/images/profile/abut.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                           trailing: const Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff33409E),
+                            size: 28,
+                          ),
+                        ),
+                        const Divider(
+                          indent: 18,
+                          endIndent: 18,
+                        ),
+                        ListTile(
+                          title: const Text(
+                            "Личная информация",
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                           leading: Image.asset(
+                            'assets/images/profile/exit.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                           trailing: const Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff33409E),
+                            size: 28,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(

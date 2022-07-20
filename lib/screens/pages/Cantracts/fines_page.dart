@@ -14,7 +14,8 @@ class FinesPage extends StatelessWidget {
         "\nПри частичном погашение по рассрочке процент штрафа считается от целой суммы по данному периоду, не на остаток по рассрочке;"
         "\nПри погашении задолженности сначала погашается тело долга, а уже после тело договора";
     return Scaffold(
-      backgroundColor: Color(0xffCACACA),
+           backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Color(0xff3554D1),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:z_pay/screens/pages/SideBar/Notification/notfication_page.dart';
 import 'package:z_pay/screens/pages/SideBar/plan_page.dart';
 import 'package:z_pay/screens/pages/SideBar/standart/standart.dart';
 import 'package:z_pay/screens/pages/faqPages/faq_page.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -112,7 +112,7 @@ class _SideBarState extends State<SideBar> {
               ),
               SizedBox(height: 30),
               ListTile(
-                leading: Image.asset("assets/images/SideBar/support.png"),
+                leading: SvgPicture.asset("assets/images/SideBar/support.svg"),
                 title: Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: Text(
@@ -140,7 +140,7 @@ class _SideBarState extends State<SideBar> {
                       .push(MaterialPageRoute(builder: (context) => FaqPage()));
                 },
                 child: ListTile(
-                  leading: Image.asset("assets/images/SideBar/faq.png"),
+                  leading: SvgPicture.asset("assets/images/SideBar/faq.svg"),
                   title: Text(
                     "Часто задаваемые вопросы",
                     style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),
@@ -154,7 +154,7 @@ class _SideBarState extends State<SideBar> {
                       MaterialPageRoute(builder: (context) => PlanPage()));
                 },
                 child: ListTile(
-                  leading: Image.asset("assets/images/SideBar/plan.png"),
+                  leading: SvgPicture.asset("assets/images/SideBar/plan.svg"),
                   title: Text(
                     "Рассрочка",
                     style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),
@@ -163,7 +163,7 @@ class _SideBarState extends State<SideBar> {
               ),
               Divider(),
               ListTile(
-                leading: Image.asset("assets/images/SideBar/offer.png"),
+                leading: SvgPicture.asset("assets/images/SideBar/offer.svg"),
                 title: Text(
                   "Публичная оферта",
                   style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),
@@ -179,8 +179,7 @@ class _SideBarState extends State<SideBar> {
                   );
                 },
                 child: ListTile(
-                  leading:
-                      Image.asset("assets/images/SideBar/notification.png"),
+                  leading: SvgPicture.asset("assets/images/SideBar/notif.svg"),
                   title: Text(
                     "Уведомления",
                     style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),
@@ -189,7 +188,7 @@ class _SideBarState extends State<SideBar> {
               ),
               Divider(),
               ListTile(
-                leading: Image.asset("assets/images/SideBar/setting.png"),
+                leading: SvgPicture.asset("assets/images/SideBar/setting.svg"),
                 title: Text(
                   "Настройки",
                   style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),
@@ -197,7 +196,7 @@ class _SideBarState extends State<SideBar> {
               ),
               Divider(),
               ListTile(
-                leading: Image.asset("assets/images/SideBar/outlog.png"),
+                leading: SvgPicture.asset("assets/images/SideBar/exit.svg"),
                 title: Text(
                   "Выйти",
                   style: TextStyle(fontSize: 16, color: Color(0xff121F3E)),

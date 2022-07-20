@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/faqPages/widget/faq_appbar.dart';
 
-
-
 class FaqPage extends StatefulWidget {
   const FaqPage({Key? key}) : super(key: key);
 
@@ -25,8 +23,6 @@ class _FaqPageState extends State<FaqPage> {
 
   @override
   Widget build(BuildContext context) {
-
-
     String icon_up = "assets/images/faq/ic_tile_trailing.png";
     String icon_down = "assets/images/faq/ic_tile_trailing_down.png";
     double _letterSpacing = 1.1;
@@ -52,14 +48,13 @@ class _FaqPageState extends State<FaqPage> {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
-                    "регистрация в сервисе   ZPAY".toUpperCase(),
+                    "регистрация в сервисе ZPAY".toUpperCase(),
 
                     // strutStyle: StrutStyle,
                     style: TextStyle(
-                        letterSpacing: 0.9,
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        fontFamily: "Montserrat"),
+                        fontFamily: "Mont"),
                   ),
                 ),
 
@@ -80,16 +75,16 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name1
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                            ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     title: Text(
                       "Как начать пользоваться сервисом?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -147,17 +142,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name2
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                                ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Как пройти регистрацию?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -215,17 +210,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name3
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                            ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Что, если получили “ОТКАЗ” в верификации?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -279,17 +274,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name4
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                              ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Можно ли пройти регистрацию через другую карту",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -343,17 +338,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name5
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                            ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Можно ли пройти повторную регистрацию, если ранее было отказано?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -407,17 +402,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name6
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                         ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Какую карту нужно прявязать к сервису?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(
@@ -468,7 +463,7 @@ class _FaqPageState extends State<FaqPage> {
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
-                        fontFamily: "Montserrat"),
+                        fontFamily: "Mont"),
                   ),
                 ),
                 Theme(
@@ -483,17 +478,17 @@ class _FaqPageState extends State<FaqPage> {
                     },
                     trailing: InkWell(
                         child: !item.name7
-                            ? Image.asset(icon_up)
-                            : Image.asset(icon_down)),
+                              ? Image.asset(icon_down,height: 30,width: 30,)
+                            : Image.asset(icon_up,height: 30,width: 30,)),
                     maintainState: true,
                     title: Text(
                       "Кто мы?",
                       style: TextStyle(
                           letterSpacing: _letterSpacing,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
+                          color: Color(0xff121F3E),
+                          fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          fontFamily: "Montserrat"),
+                          fontFamily: "Mont"),
                     ),
                     children: [
                       Container(

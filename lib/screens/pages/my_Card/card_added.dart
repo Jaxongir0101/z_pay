@@ -13,6 +13,8 @@ class _CardAddedState extends State<CardAdded> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(

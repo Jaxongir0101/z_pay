@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PlanPage extends StatelessWidget {
   const PlanPage({Key? key}) : super(key: key);
@@ -6,6 +7,7 @@ class PlanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Color(0xff3554D1),
@@ -24,10 +26,9 @@ class PlanPage extends StatelessWidget {
         ),
         actions: [
           Container(
-              margin: EdgeInsets.only(right: 16),
-              child: Image(
-                image: AssetImage("assets/images/SideBar/plan.png"),
-              ))
+            margin: EdgeInsets.only(right: 16),
+            child: SvgPicture.asset("assets/images/SideBar/plan.svg"),
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -38,8 +39,11 @@ class PlanPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding:
-                    EdgeInsets.only(top: 27, left: 28, bottom: 36, right: 26),
+                padding: EdgeInsets.only(
+                  top: 27,
+                  left: 16,
+                  bottom: 36,
+                ),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
@@ -48,8 +52,11 @@ class PlanPage extends StatelessWidget {
                   children: [
                     Container(
                       alignment: Alignment.topCenter,
-                      child:
-                          Image.asset("assets/images/SideBar/planInImage1.png"),
+                      child: Image.asset(
+                        "assets/images/SideBar/planInImage1.png",
+                        height: 216,
+                        width: 216,
+                      ),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -62,65 +69,95 @@ class PlanPage extends StatelessWidget {
                     SizedBox(height: 28),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
-                        SizedBox(width: 12),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
+                        SizedBox(width: 10),
                         Text(
-                          "Кредитный лимит до 8 000 000 сум.",
+                          "Кредитный лимит до 8 000 000 сум",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Погашайте рассрочку в 3 равных\nплатежа.",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "0% переплат",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Без первоначального взноса.",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Приятные бонусы",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
@@ -128,9 +165,12 @@ class PlanPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              Container(
-                padding:
-                    EdgeInsets.only(top: 27, left: 28, bottom: 36, right: 26),
+             Container(
+                padding: EdgeInsets.only(
+                  top: 27,
+                  left: 16,
+                  bottom: 36,
+                ),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
@@ -138,9 +178,13 @@ class PlanPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        alignment: Alignment.topCenter,
-                        child: Image.asset(
-                            "assets/images/SideBar/planInImage2.png")),
+                      alignment: Alignment.topCenter,
+                      child: Image.asset(
+                        "assets/images/SideBar/planInImage2.png",
+                        height: 216,
+                        width: 216,
+                      ),
+                    ),
                     SizedBox(height: 20),
                     Text(
                       "ZPAY-Zero",
@@ -152,72 +196,102 @@ class PlanPage extends StatelessWidget {
                     SizedBox(height: 28),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
-                        SizedBox(width: 12),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
+                        SizedBox(width: 10),
                         Text(
-                          "Кредитный лимит до 8 000 000 сум.",
+                          "Кредитный лимит до 8 000 000 сум",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Погашайте рассрочку в 3 равных\nплатежа.",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "0% переплат",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Без первоначального взноса.",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                     SizedBox(height: 32),
                     Row(
                       children: [
-                        Image.asset("assets/images/SideBar/planCheck.png"),
+                        Image.asset(
+                          "assets/images/SideBar/planCheck.png",
+                          height: 20,
+                          width: 20,
+                        ),
                         SizedBox(width: 12),
                         Text(
                           "Приятные бонусы",
                           style: TextStyle(
                               color: Color(0xff12154C),
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Mont",
+                              fontSize: 14),
                         )
                       ],
                     ),
                   ],
                 ),
               ),
-            ],
+             ],
           ),
         ),
       ),

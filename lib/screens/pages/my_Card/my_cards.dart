@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:z_pay/screens/pages/my_Card/card_add.dart';
 import 'package:z_pay/screens/pages/my_Card/card_bottomSheet.dart';
+import 'package:z_pay/screens/pages/my_Card/my_card_one.dart';
 
 import '../../../database_helper.dart';
 import '../../../viewModel/card.dart';
@@ -15,6 +17,8 @@ class _MyCardsState extends State<MyCards> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -100,7 +104,7 @@ class _MyCardsState extends State<MyCards> {
       onTap: () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: ((context) => MyCards()),
+            builder: ((context) => CardAddPage()),
           ),
         );
       },
@@ -149,14 +153,13 @@ class _MyCardsState extends State<MyCards> {
               padding: const EdgeInsets.only(bottom: 10),
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: (){
+                  onTap: () {
                     CardBottomSheet cardBottomSheet = CardBottomSheet();
                     cardBottomSheet.dialogPage(context);
                   },
                   child: Container(
                     height: 180,
                     width: 280,
-                   
                     margin: EdgeInsets.only(bottom: 20),
                     decoration: BoxDecoration(
                         color: Color(0xff4A6AB3),
@@ -164,7 +167,9 @@ class _MyCardsState extends State<MyCards> {
                     child: Stack(
                       children: [
                         Image.asset(
-                            "assets/images/card/cards/cardCornerOne.png",fit: BoxFit.cover,),
+                          "assets/images/card/cards/cardCornerOne.png",
+                          fit: BoxFit.cover,
+                        ),
                         Image.asset(
                             "assets/images/card/cards/cardCornerTwo.png"),
                         Container(

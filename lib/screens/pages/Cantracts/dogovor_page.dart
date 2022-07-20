@@ -14,6 +14,8 @@ class _DogovorPageState extends State<DogovorPage> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

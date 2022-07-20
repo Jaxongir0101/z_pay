@@ -36,6 +36,7 @@ dev_dependencies:
   sqflite: ^2.0.3
   path_provider: ^2.0.11 
   flutter_screen_lock: ^7.0.3
+  flutter_svg: ^1.1.1+1
 
 
 flutter:

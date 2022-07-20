@@ -6,7 +6,6 @@ class PartnerDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //1
       body: CustomScrollView(
         slivers: <Widget>[
           //2
@@ -15,7 +14,7 @@ class PartnerDetails extends StatelessWidget {
             expandedHeight: 250.0,
             pinned: false,
             flexibleSpace: FlexibleSpaceBar(
-            background: Image.asset(
+              background: Image.asset(
                 'assets/images/partner/partDetails.png',
                 fit: BoxFit.fill,
               ),

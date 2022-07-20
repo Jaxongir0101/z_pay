@@ -3,8 +3,9 @@ import 'package:z_pay/screens/pages/paymentsPages/widget/payment_page_button.dar
 import 'package:z_pay/screens/pages/paymentsPages/widget/payments_appbar.dart';
 
 import 'first_payment_page.dart';
+
 class MobilePaymentPage extends StatefulWidget {
-  const MobilePaymentPage(BuildContext context,  {Key? key}) : super(key: key);
+  const MobilePaymentPage(BuildContext context, {Key? key}) : super(key: key);
 
   @override
   State<MobilePaymentPage> createState() => _MobilePaymentPageState();
@@ -16,6 +17,7 @@ class _MobilePaymentPageState extends State<MobilePaymentPage> {
     var backRoute = PaymentHomePage();
     String appBarName = "Моб. связь";
     return Scaffold(
+      backgroundColor: Color(0xfff2f4f7),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: PaymentsAppBar(context, appBarName, backRoute),
@@ -41,15 +43,17 @@ class _MobilePaymentPageState extends State<MobilePaymentPage> {
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_beeline.png"),
+                  PaymentButton(
+                      context, "assets/images/payments/ic_beeline.png"),
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_ucell.png"),
+                  PaymentButton(context, "assets/images/payments/ic_ucell.png"),
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_mobiuz.png"),
+                  PaymentButton(
+                      context, "assets/images/payments/ic_mobiuz.png"),
                   SizedBox(
                     width: 15,
                   ),
@@ -63,15 +67,18 @@ class _MobilePaymentPageState extends State<MobilePaymentPage> {
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_humans.png"),
+                  PaymentButton(
+                      context, "assets/images/payments/ic_humans.png"),
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_perfectum.png"),
+                  PaymentButton(
+                      context, "assets/images/payments/ic_perfectum.png"),
                   SizedBox(
                     width: 15,
                   ),
-                  PaymentButton(context,"assets/images/payments/ic_uzmobile.png"),
+                  PaymentButton(
+                      context, "assets/images/payments/ic_uzmobile.png"),
                   SizedBox(
                     width: 15,
                   ),

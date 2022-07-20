@@ -27,13 +27,13 @@ class _MyIdThreePageState extends State<MyIdThreePage> {
         type: MaskAutoCompletionType.lazy);
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(margin: EdgeInsets.only(top: 26)),
+              Container(margin: EdgeInsets.only(top: 6)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -367,37 +367,37 @@ class _MyIdThreePageState extends State<MyIdThreePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DotsIndicator(
-                    dotsCount: 3,
-                    position: 1,
-                    decorator: DotsDecorator(
-                      activeColor: Color(0xff3554D1),
-                      shapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0)),
-                      ],
-                      activeShapes: [
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)),
-                      ],
-                      size: Size(6.0, 6),
-                      activeSize: Size(9.0, 9.0),
-                    ),
-                  ),
-                ],
-              ),
+              // SizedBox(height: 24),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     DotsIndicator(
+              //       dotsCount: 3,
+              //       position: 1,
+              //       decorator: DotsDecorator(
+              //         activeColor: Color(0xff3554D1),
+              //         shapes: [
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(9.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(6.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(4.0)),
+              //         ],
+              //         activeShapes: [
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //           RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(16.0)),
+              //         ],
+              //         size: Size(6.0, 6),
+              //         activeSize: Size(9.0, 9.0),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
