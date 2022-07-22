@@ -41,24 +41,23 @@ class _InstructTwoState extends State<InstructTwo> {
             ],
           ),
           SizedBox(
-            height: height*0.063,
+            height: height * 0.063,
           ),
           Stack(
             children: [
               Center(
                 child: Container(
-                  height: height*0.774,
+                  height: height * 0.774,
                   width: 280,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/instruction/device.png'),
+                      image: AssetImage('assets/images/instruction/device.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                   child: Center(
                     child: Container(
-                      height: height*0.708,
+                      height: height * 0.708,
                       width: 250,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -91,8 +90,9 @@ class _InstructTwoState extends State<InstructTwo> {
                     ],
                   ),
                 ),
-                margin: EdgeInsets.only(left: 0, right: 32, top: height*0.3876),
-                padding: EdgeInsets.only(top: height*0.1292),
+                margin:
+                    EdgeInsets.only(left: 0, right: 32, top: height * 0.3876),
+                padding: EdgeInsets.only(top: height * 0.1292),
                 child: Expanded(
                   child: Column(children: [
                     SizedBox(
@@ -120,66 +120,11 @@ class _InstructTwoState extends State<InstructTwo> {
                       ),
                     ),
                     SizedBox(
-                      height: height*0.0775,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 32),
-                          child: DotsIndicator(
-                            dotsCount: 4,
-                            position:
-                                context.watch<ViewModel>().indicatorNumber,
-                            decorator: DotsDecorator(
-                              size: const Size.square(6.0),
-                              activeSize: const Size(30.0, 6.0),
-                              activeShape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5.0)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 141,
-                          height: 42,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                context.read<ViewModel>().indicatorIncrement();
-                              });
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => InstructTree(),
-                                ),
-                              );
-                            },
-                            child: Text(
-                              "Дальше",
-                              style: TextStyle(color: Color(0XFF2740A6)),
-                            ),
-                            style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  EdgeInsets.only(
-                                      top: 11,
-                                      bottom: 11,
-                                      left: 22,
-                                      right: 22)),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Color(0xffBAD0FF)),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      height: height * 0.0775,
                     ),
                   ]),
                 ),
-              )
+              ),
             ],
           ),
         ],

@@ -25,7 +25,7 @@ class _InstructTreeState extends State<InstructTree> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+            children: const [
               Padding(
                 padding: const EdgeInsets.only(right: 32),
                 child: Text(
@@ -42,13 +42,13 @@ class _InstructTreeState extends State<InstructTree> {
             ],
           ),
           SizedBox(
-            height: height*0.064,
+            height: height * 0.064,
           ),
           Stack(
             children: [
               Center(
                 child: Container(
-                  height: height*0.774,
+                  height: height * 0.774,
                   width: 280,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -92,8 +92,9 @@ class _InstructTreeState extends State<InstructTree> {
                     ],
                   ),
                 ),
-                margin: EdgeInsets.only(left: 0, right: 32, top: height*0.3876),
-                padding: EdgeInsets.only(top: height*0.1292),
+                margin:
+                    EdgeInsets.only(left: 0, right: 32, top: height * 0.3876),
+                padding: EdgeInsets.only(top: height * 0.1292),
                 child: Expanded(
                   child: Column(children: [
                     SizedBox(
@@ -121,66 +122,11 @@ class _InstructTreeState extends State<InstructTree> {
                       ),
                     ),
                     SizedBox(
-                      height:    height*0.0775,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 32),
-                          child: DotsIndicator(
-                            dotsCount: 4,
-                            position:
-                                context.watch<ViewModel>().indicatorNumber,
-                            decorator: DotsDecorator(
-                              size: const Size.square(6.0),
-                              activeSize: const Size(30.0, 6.0),
-                              activeShape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5.0)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 141,
-                          height: 42,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                context.read<ViewModel>().indicatorIncrement();
-                              });
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => InstructFour(),
-                                ),
-                              );
-                            },
-                            child: Text(
-                              "Дальше",
-                              style: TextStyle(color: Color(0XFF2740A6)),
-                            ),
-                            style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  EdgeInsets.only(
-                                      top: 11,
-                                      bottom: 11,
-                                      left: 22,
-                                      right: 22)),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Color(0xffBAD0FF)),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      height: height * 0.0775,
                     ),
                   ]),
                 ),
-              )
+              ),
             ],
           ),
         ],

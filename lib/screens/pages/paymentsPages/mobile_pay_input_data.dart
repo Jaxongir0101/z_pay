@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/paymentsPages/mobile_pay_number.dart';
 import 'package:z_pay/screens/pages/paymentsPages/widget/payments_appbar.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class MobilePayDetails extends StatefulWidget {
   String imageUrl;
@@ -30,8 +31,14 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var maskFormatter = MaskTextInputFormatter(
+        mask: '+998 ## ### ## ##',
+        filter: {"#": RegExp(r'[0-9]')},
+        type: MaskAutoCompletionType.lazy);
+
     var backRoute = MobilePaymentPage(context);
     String appBarName = "Мобильная связь";
+
     return Scaffold(
       backgroundColor: Color(0xfff2f4f7),
       resizeToAvoidBottomInset: false,
@@ -46,7 +53,7 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [     
+          children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -99,24 +106,27 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
                           child: TextFormField(
-                              keyboardType: TextInputType.number,
-                              textInputAction: TextInputAction.next,
+                              inputFormatters: [maskFormatter],
+                              keyboardType: TextInputType.phone,
+                                textInputAction: TextInputAction.done,
                               onChanged: (value) {
-                                setState(() {
-                                  if (value.length == 12) {
+                              
+                              },
+                              validator: (value) {
+                                if (value!.length == 0)
+                                  return "Bu joyni to'ldirmadingiz!";
+
+                                    setState(() {
+                                  if (value?.length == 17) {
                                     number = true;
-                                  } else if (value.length >= 0 ||
-                                      value.length > 12) {
+                                  } else{
                                     value = "";
                                     number = false;
                                   }
                                 });
                               },
-                              validator: (value) {
-                                if (value!.length == 0)
-                                  return "Bu joyni to'ldirmadingiz!";
-                              },
                               decoration: InputDecoration(
+                                hintText: "+998 ## ### ## ##",
                                 fillColor: Colors.grey,
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0),
@@ -152,7 +162,9 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                           child: TextFormField(
                               validator: (value) {
                                 if (value!.length == 0)
-                                  return "Bu joyni to'ldirmadingiz!";
+                                  {return "Bu joyni to'ldirmadingiz!";}
+
+                                 
                               },
                               onChanged: (value) {
                                 setState(() {
@@ -162,6 +174,10 @@ class _StateMobilePayDetails extends State<MobilePayDetails> {
                                       value.length > 10) {
                                     value = "";
                                     money = false;
+                                  }
+
+                                   if(value.length % 3 ==0){
+                                    value = value + " ";
                                   }
                                 });
                               },

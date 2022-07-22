@@ -36,7 +36,7 @@ class _MyCardsState extends State<MyCards> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.only(left: 24,right: 24,top: 24),
           child: Column(
             children: [cardTable(), addCardButton()],
           ),
@@ -109,7 +109,7 @@ class _MyCardsState extends State<MyCards> {
         );
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 30),
+        margin: EdgeInsets.only(bottom: 30,),
         width: double.infinity,
         height: 50,
         alignment: Alignment.center,
@@ -222,4 +222,6 @@ class _MyCardsState extends State<MyCards> {
           }),
     );
   }
+
+
 }

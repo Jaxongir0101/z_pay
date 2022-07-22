@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
 import 'package:z_pay/screens/pages/myIDpage/my_id.dart';
+import 'package:z_pay/screens/pages/my_Card/my_card_one.dart';
 import 'package:z_pay/screens/pages/my_Card/my_cards.dart';
+import 'package:provider/provider.dart';
+
+import '../../../viewModel/card_provider.dart';
 
 class CardAdded extends StatefulWidget {
   const CardAdded({Key? key}) : super(key: key);
@@ -14,7 +19,6 @@ class _CardAddedState extends State<CardAdded> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff2f4f7),
-
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -45,9 +49,10 @@ class _CardAddedState extends State<CardAdded> {
             ),
             InkWell(
               onTap: () {
+                context.read<CardProvider>().cardtoPage();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: ((context) => MyCards()),
+                    builder: ((context) => BottomNavigationPage()),
                   ),
                 );
               },

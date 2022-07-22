@@ -37,6 +37,8 @@ dev_dependencies:
   path_provider: ^2.0.11 
   flutter_screen_lock: ^7.0.3
   flutter_svg: ^1.1.1+1
+  carousel_slider: ^4.1.1
+  shared_preferences: ^2.0.15
 
 
 flutter:
@@ -62,6 +64,7 @@ flutter:
     - assets/images/partner/
     - assets/images/card/cards/
     - assets/images/
+    - assets/images/password/
 
   fonts:
     - family: Montserrat

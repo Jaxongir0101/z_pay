@@ -1,21 +1,27 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:z_pay/screens/pages/PartnerovStore/partner_details.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
-import 'package:z_pay/screens/pages/password/passwort_two.dart';
-
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
+import 'package:z_pay/screens/pages/password/password.dart';
 import 'package:z_pay/viewModel/passwordProvider.dart';
 
-class Password extends StatefulWidget {
-  const Password({super.key});
+class EnterPincode extends StatefulWidget {
+  const EnterPincode({super.key});
 
   @override
-  State<Password> createState() => _PasswordState();
+  State<EnterPincode> createState() => _EnterPincodeState();
 }
 
-class _PasswordState extends State<Password> {
+class _EnterPincodeState extends State<EnterPincode> {
+  final LocalAuthentication auth = LocalAuthentication();
+
+  bool? _canCheckBiometrics;
+  List<BiometricType>? _availableBiometrics;
+  String _authorized = 'Not Authorized';
+  bool _isAuthenticating = false;
+
   String number1 = "";
   int count = 0;
   @override
@@ -32,13 +38,33 @@ class _PasswordState extends State<Password> {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-       
         children: [
           SizedBox(
-            height:150,
+            height: 60,
           ),
+          Container(
+            padding: EdgeInsets.only(right: 20),
+            alignment: Alignment.centerRight,
+            height: 20,
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => Password(),
+                ));
+              },
+              child: Text(
+                "Ввести пароль",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xff33409E),
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "Mont"),
+              ),
+            ),
+          ),
+          SizedBox(height: 70),
           Text(
-            "Установите PIN",
+            "Потвердить PIN",
             style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.w800, fontFamily: "Mont"),
           ),
@@ -100,9 +126,9 @@ class _PasswordState extends State<Password> {
                   setState(() {
                     count++;
                   });
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                     context.read<PassProvider>().passSum(number1, count);
                   }
@@ -137,9 +163,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -174,9 +200,9 @@ class _PasswordState extends State<Password> {
                   number1 = number1 + "3";
                   setState(() {});
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -215,9 +241,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -251,9 +277,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -287,9 +313,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -328,9 +354,9 @@ class _PasswordState extends State<Password> {
                   });
                   number1 = number1 + "7";
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -364,9 +390,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -400,9 +426,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -434,9 +460,17 @@ class _PasswordState extends State<Password> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 76,
-                width: 76,
+              InkWell(
+                onTap: _authenticateWithBiometrics,
+                child: Container(
+                  height: 76,
+                  width: 76,
+                  child: Image.asset(
+                    "assets/images/password/finger.png",
+                    height: 55,
+                    width: 61,
+                  ),
+                ),
               ),
               SizedBox(width: 16),
               InkWell(
@@ -446,9 +480,9 @@ class _PasswordState extends State<Password> {
                     count++;
                   });
                   context.read<PassProvider>().passSum(number1, count);
-                  if (count == 4) {
+                  if (number1.length == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => BottomNavigationPage(),
                     ));
                   }
                 },
@@ -481,7 +515,9 @@ class _PasswordState extends State<Password> {
                     number1.substring(0, number1.length - 1);
                   }
                   setState(() {
-                    if (count > 0) count--;
+                    if (count > 0) {
+                      count--;
+                    }
                   });
                 },
                 borderRadius: BorderRadius.circular(16),
@@ -503,53 +539,50 @@ class _PasswordState extends State<Password> {
               ),
             ],
           ),
-          SizedBox(
-            height: 35,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage(
-                    "assets/images/password/face.png",
-                  ),
-                )),
-              ),
-              SizedBox(width: 10),
-              Text(
-                "Разблокировка через Face ID",
-              ),
-              SizedBox(width: 10),
-              SizedBox(
-                height: 40,
-                width: 40,
-                child: CupertinoSwitch(
-                  value: !_switchValue,
-                  onChanged: (value) {
-                    setState(() {
-                      _switchValue = value;
-                    });
-                  },
-                ),
-              ),
-            ],
-          )
         ],
       ),
     );
   }
 
-  static const _keyNumber1 = "numberOne";
-  SharedPreferences? preferences;
+  Future<void> _authenticateWithBiometrics() async {
+    bool authenticated = false;
+    try {
+      setState(() {
+        _isAuthenticating = true;
+        _authorized = 'Authenticating';
+      });
+      authenticated = await auth.authenticate(
+        localizedReason:
+            'Scan your fingerprint (or face or whatever) to authenticate',
+        options: const AuthenticationOptions(
+          useErrorDialogs: true,
+          stickyAuth: true,
+          biometricOnly: true,
+        ),
+      );
+      setState(() {
+        _isAuthenticating = false;
+        _authorized = 'Authenticating';
+      });
+       Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => BottomNavigationPage()));
 
-  Future init() async => preferences = await SharedPreferences.getInstance();
 
-  Future setNumber(String numberOne) async =>
-      await preferences?.setString(_keyNumber1, numberOne);
+    } on PlatformException catch (e) {
+      print(e);
+      setState(() {
+        _isAuthenticating = false;
+        _authorized = 'Error - ${e.message}';
+      });
+      return;
+    }
+    if (!mounted) {
+      return;
+    }
 
-  getNumber() => preferences?.getString(_keyNumber1);
+    final String message = authenticated ? 'Authorized' : 'Not Authorized';
+    setState(() {
+      _authorized = message;
+    });
+  }
 }

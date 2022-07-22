@@ -5,6 +5,7 @@ class CardProvider extends ChangeNotifier{
   int cardTextFieldNumber = 0;
   bool isCardButton = false;
   String cardCode = "";
+  bool isCardToBP = false;
 
   cardIndicatorNumber(number){
     index = number;
@@ -15,12 +16,19 @@ class CardProvider extends ChangeNotifier{
     if(cardTextFieldNumber == 3){
       isCardButton =true;
     }
-
     notifyListeners();
   }
 
   cardCodes(String code){
     cardCode = code;
+    notifyListeners();
+  }
+   void updateTaskList() {
+    notifyListeners();
+  }
+
+  cardtoPage(){
+    isCardToBP = true;
     notifyListeners();
   }
 

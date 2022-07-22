@@ -395,7 +395,10 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 60,
       ),
       actions: [
-        Container(
+      InkWell(
+        onTap:(){},
+
+        child:  Container(
           margin: EdgeInsets.only(right: 22),
           width: 208,
           height: 62,
@@ -431,7 +434,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         )
-      ],
+      )
+       ],
     );
   }
 
@@ -529,7 +533,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ));
             },
             child: Container(
-                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
+                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 16),
                 width: 98.5,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -554,7 +558,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w700,
                           fontFamily: "Mont"),
                     ),
-                    Image.asset("assets/images/home/bonusList3.png")
+                    Container(
+                      margin: EdgeInsets.only(left: 4),
+                      child: Image.asset("assets/images/home/bonusList3.png",alignment: Alignment.center,))
                   ],
                 )),
           ),
@@ -568,7 +574,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ));
             },
             child: Container(
-                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 18),
+                padding: EdgeInsets.symmetric(vertical: 13, horizontal: 14),
                 width: 98.5,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(

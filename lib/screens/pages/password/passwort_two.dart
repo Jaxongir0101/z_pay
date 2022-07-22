@@ -4,18 +4,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:z_pay/screens/pages/PartnerovStore/partner_details.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
-import 'package:z_pay/screens/pages/password/passwort_two.dart';
+import 'package:z_pay/screens/pages/password/enter_pincode.dart';
 
 import 'package:z_pay/viewModel/passwordProvider.dart';
 
-class Password extends StatefulWidget {
-  const Password({super.key});
+class PassWordTwo extends StatefulWidget {
+  const PassWordTwo({super.key});
 
   @override
-  State<Password> createState() => _PasswordState();
+  State<PassWordTwo> createState() => _PassWordTwoState();
 }
 
-class _PasswordState extends State<Password> {
+class _PassWordTwoState extends State<PassWordTwo> {
   String number1 = "";
   int count = 0;
   @override
@@ -32,13 +32,13 @@ class _PasswordState extends State<Password> {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-       
+
         children: [
           SizedBox(
-            height:150,
+            height: 150,
           ),
           Text(
-            "Установите PIN",
+            "Потвердить PIN",
             style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.w800, fontFamily: "Mont"),
           ),
@@ -102,7 +102,7 @@ class _PasswordState extends State<Password> {
                   });
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                     context.read<PassProvider>().passSum(number1, count);
                   }
@@ -139,7 +139,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -176,7 +176,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -217,7 +217,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -253,7 +253,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -289,7 +289,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -330,7 +330,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -366,7 +366,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -402,7 +402,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },
@@ -448,7 +448,7 @@ class _PasswordState extends State<Password> {
                   context.read<PassProvider>().passSum(number1, count);
                   if (count == 4) {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PassWordTwo(),
+                      builder: (context) => EnterPincode(),
                     ));
                   }
                 },

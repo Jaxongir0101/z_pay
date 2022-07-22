@@ -12,7 +12,7 @@ class SplashTwo extends StatefulWidget {
 
 class _SplashTwoState extends State<SplashTwo> {
   _initTimer() {
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(

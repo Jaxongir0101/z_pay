@@ -4,6 +4,8 @@ import 'package:z_pay/screens/pages/HomeScreen/home_screen_page.dart';
 import 'package:z_pay/screens/pages/my_Card/my_card_one.dart';
 import 'package:z_pay/screens/pages/profilePage/profile_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+import '../../../viewModel/card_provider.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({super.key});
@@ -32,7 +34,8 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _widgetOptions.elementAt(
+             _selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
@@ -54,40 +57,39 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
             ),
             icon: SvgPicture.asset(
               'assets/images/bottomNavigationBar/Briefcase.svg',
-              color: Color(0xff717394),),
+              color: Color(0xff717394),
+            ),
             label: 'Договора',
           ),
           BottomNavigationBarItem(
-            
-         activeIcon: SvgPicture.asset(
+            activeIcon: SvgPicture.asset(
               'assets/images/bottomNavigationBar/Cardholder.svg',
               color: Color(0xff3554D1),
-              
             ),
-            
             icon: SvgPicture.asset(
               'assets/images/bottomNavigationBar/Cardholder.svg',
-              color: Color(0xff717394),),
+              color: Color(0xff717394),
+            ),
             label: 'Мои карты',
           ),
           BottomNavigationBarItem(
-           activeIcon: SvgPicture.asset(
+            activeIcon: SvgPicture.asset(
               'assets/images/bottomNavigationBar/Profile.svg',
               color: Color(0xff3554D1),
             ),
             icon: SvgPicture.asset(
               'assets/images/bottomNavigationBar/Profile.svg',
-              color: Color(0xff717394),),
+              color: Color(0xff717394),
+            ),
             label: 'Профиль',
           ),
         ],
-        currentIndex: _selectedIndex,
-      
+        currentIndex:
+             _selectedIndex,
         selectedItemColor: Color(0xff3554D1),
-      unselectedItemColor: Color(0xff717394),
-
-       type: BottomNavigationBarType.fixed,
-      showUnselectedLabels: true,
+        unselectedItemColor: Color(0xff717394),
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
     );

@@ -33,13 +33,13 @@ class InstructFour extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: height*0.064,
+            height: height * 0.064,
           ),
           Stack(
             children: [
               Center(
                 child: Container(
-                  height: height*0.774,
+                  height: height * 0.774,
                   width: 280,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -50,7 +50,7 @@ class InstructFour extends StatelessWidget {
                   ),
                   child: Center(
                     child: Container(
-                      height: height*0.708,
+                      height: height * 0.708,
                       width: 250,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
@@ -83,8 +83,9 @@ class InstructFour extends StatelessWidget {
                     ],
                   ),
                 ),
-                margin: EdgeInsets.only(left: 0, right: 0, top: height*0.3876),
-                padding: EdgeInsets.only(top:  height*0.1292),
+                margin:
+                    EdgeInsets.only(left: 0, right: 0, top: height * 0.3876),
+                padding: EdgeInsets.only(top: height * 0.1292),
                 child: Expanded(
                   child: Column(children: [
                     SizedBox(
@@ -113,43 +114,6 @@ class InstructFour extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 60,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                            width: 330,
-                            height: 50,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    Color(0xff427CF8),
-                                    Color(0xff1A3FC7),
-                                  ]),
-                                  borderRadius: BorderRadius.circular(5),
-                                  boxShadow: <BoxShadow>[
-                                    BoxShadow(
-                                        color: Color.fromRGBO(
-                                            0, 0, 0, 0.57), //shadow for button
-                                        blurRadius: 5) //blur radius of shadow
-                                  ]),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.transparent,
-                                  onSurface: Colors.transparent,
-                                  shadowColor: Colors.transparent,
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: ((context) => LoginPage())));
-                                },
-                                child: Text(
-                                  "Пройти регистрацию",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            )),
-                      ],
                     ),
                   ]),
                 ),

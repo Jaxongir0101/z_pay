@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
+import 'package:z_pay/screens/pages/instructionPage/instruct_one.dart';
 import 'package:z_pay/screens/pages/password/password.dart';
 import 'package:z_pay/screens/pages/splashPage/splash1.dart';
 import 'package:flutter/services.dart';
 import 'package:z_pay/viewModel/card_provider.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:z_pay/viewModel/passwordProvider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +23,9 @@ void main() {
         ChangeNotifierProvider(
           create: (_) => CardProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => PassProvider(),
+        ),
       ],
       child: MyApp(),
     ),
@@ -34,7 +38,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       theme: ThemeData(
         unselectedWidgetColor: Colors.white, // <-- your color
       ),

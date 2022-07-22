@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:z_pay/screens/pages/HomeScreen/home_screen_page.dart';
 import 'package:z_pay/screens/pages/LoginStagePage/come_in.dart';
+import 'package:z_pay/screens/pages/bottomNavigationPage/bottom_nav_page.dart';
 import 'package:z_pay/screens/pages/myIDpage/my_id_one.dart';
+import 'package:z_pay/screens/pages/password/password.dart';
 import 'package:z_pay/viewModel/main_provider.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -329,7 +332,7 @@ class _MyIdThreePageState extends State<MyIdThreePage> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => ComeInPage(),
+                          builder: (context) => Password(),
                         ),
                       );
                     },
